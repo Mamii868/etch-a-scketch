@@ -1,7 +1,8 @@
 const sketchContainer = document.querySelector(".sketchContainer");
 const colorContainer = document.querySelector(".colorContainer");
+const colors = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'purple', 'pink']
 let currentColor;
-let background = `style="background-color:${currentColor};"`
+const background = `style="background-color:${currentColor};"`
 // creates flex boxes
 function createGrid() {
     for (let i = 1; i <= 256; i++) {
@@ -15,3 +16,9 @@ const sketchBox = document.querySelectorAll(".sketchBox");
 sketchBox.forEach(box => box.addEventListener('mouseover', () => {
     box.classList.add('blue')
 }))
+
+function colorGrid() {
+    colors.forEach(color => {
+        colorContainer.innerHTML += `<div class="colorBox" style="background-color:${color}"></div>`
+    })
+}
