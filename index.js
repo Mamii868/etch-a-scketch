@@ -1,6 +1,6 @@
 const sketchContainer = document.querySelector(".sketchContainer");
 const colorContainer = document.querySelector(".colorContainer");
-const eraseBtn = document.querySelector('.eraseBtn');
+const eraseBtn = document.querySelector(".eraseBtn");
 const colors = [
   "red",
   "orange",
@@ -15,7 +15,6 @@ const colors = [
 ];
 let currentColor;
 const background = `style="background-color:${currentColor};"`;
-
 
 // Creates flex boxes
 function createGrid() {
@@ -37,14 +36,14 @@ function colorGrid() {
   colors.forEach((color) => {
     colorContainer.innerHTML += `<div class="colorBox" value="${color}" style="background-color:${color}"></div>`;
   });
-  colorContainer.classList.add("colorContainerShrink")
-//Erase Screen
-eraseBtn.addEventListener("click", () => {
-    sketchBox.forEach(box => {
-        box.style.backgroundColor = 'white';
-    })
-    console.log('clicked')
-})
+  colorContainer.classList.add("colorContainerShrink");
+  //Erase Screen
+  eraseBtn.addEventListener("click", () => {
+    sketchBox.forEach((box) => {
+      box.style.backgroundColor = "white";
+    });
+    console.log("clicked");
+  });
 }
 colorGrid();
 
@@ -56,4 +55,3 @@ colorBox.forEach((box) =>
     console.log(currentColor);
   })
 );
-
