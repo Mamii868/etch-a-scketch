@@ -50,6 +50,7 @@ flex-basis: 6.25%;
 
 .eraseBtn:hover {
     scale: 1.4;
+    cursor: pointer;
     
 }
 
