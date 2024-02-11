@@ -15,11 +15,18 @@ const sketchBox = document.querySelectorAll(".sketchBox");
 //captures where mouse hovers
 sketchBox.forEach(box => box.addEventListener('mouseover', () => {
     // box.classList.add('blue')
+
 }))
 
 function colorGrid() {
     colors.forEach(color => {
-        colorContainer.innerHTML += `<div class="colorBox" style="background-color:${color}"></div>`
+        colorContainer.innerHTML += `<div class="colorBox" value="${color}" style="background-color:${color}"></div>`
+       
     })
 }
 colorGrid()
+const colorBox = document.querySelectorAll(".colorBox")
+colorBox.forEach(box => box.addEventListener("click", () => {
+    currentColor = box.getAttribute("value");
+    console.log(currentColor)
+}))
