@@ -20,10 +20,6 @@ body {
   height: 6.25%;
 }
 
-.blue {
-    background-color: blue;
-}
-
 .colorContainer {
     justify-content: center;
     display: flex;
