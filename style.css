@@ -12,9 +12,13 @@ body {
   flex-wrap: wrap;
   height: 480px;
   width: 480px;
+  border: 1px solid black;
 }
 .sketchBox {
   flex-basis: 6.25%;
   height: 6.25%;
-  border: 1px solid black;
+}
+
+.blue {
+    background-color: blue;
 }
