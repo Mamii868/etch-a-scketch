@@ -37,7 +37,7 @@ function colorGrid() {
   colors.forEach((color) => {
     colorContainer.innerHTML += `<div class="colorBox" value="${color}" style="background-color:${color}"></div>`;
   });
-  
+  colorContainer.classList.add("colorContainerShrink")
 //Erase Screen
 eraseBtn.addEventListener("click", () => {
     sketchBox.forEach(box => {
