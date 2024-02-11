@@ -1,0 +1,20 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.sketchContainer {
+  display: flex;
+  flex-wrap: wrap;
+  height: 480px;
+  width: 480px;
+}
+.sketchBox {
+  flex-basis: 6.25%;
+  height: 6.25%;
+  border: 1px solid black;
+}
