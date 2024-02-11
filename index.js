@@ -22,3 +22,4 @@ function colorGrid() {
         colorContainer.innerHTML += `<div class="colorBox" style="background-color:${color}"></div>`
     })
 }
+colorGrid()
