@@ -1,6 +1,7 @@
 const sketchContainer = document.querySelector(".sketchContainer");
 const colorContainer = document.querySelector(".colorContainer");
-
+let currentColor;
+let background = `style="background-color:${currentColor};"`
 // creates flex boxes
 function createGrid() {
     for (let i = 1; i <= 256; i++) {
