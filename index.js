@@ -43,7 +43,6 @@ eraseBtn.addEventListener("click", () => {
     sketchBox.forEach(box => {
         box.style.backgroundColor = 'white';
     })
-    console.log('clicked')
 })
 }
 colorGrid();
@@ -53,7 +52,6 @@ const colorBox = document.querySelectorAll(".colorBox");
 colorBox.forEach((box) =>
   box.addEventListener("click", () => {
     currentColor = box.getAttribute("value");
-    console.log(currentColor);
   })
 );
 
