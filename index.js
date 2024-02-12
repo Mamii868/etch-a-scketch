@@ -36,14 +36,13 @@ function colorGrid() {
   colors.forEach((color) => {
     colorContainer.innerHTML += `<div class="colorBox" value="${color}" style="background-color:${color}"></div>`;
   });
-  colorContainer.classList.add("colorContainerShrink");
-  //Erase Screen
-  eraseBtn.addEventListener("click", () => {
-    sketchBox.forEach((box) => {
-      box.style.backgroundColor = "white";
-    });
-    console.log("clicked");
-  });
+  colorContainer.classList.add("colorContainerShrink")
+//Erase Screen
+eraseBtn.addEventListener("click", () => {
+    sketchBox.forEach(box => {
+        box.style.backgroundColor = 'white';
+    })
+})
 }
 colorGrid();
 
@@ -52,6 +51,5 @@ const colorBox = document.querySelectorAll(".colorBox");
 colorBox.forEach((box) =>
   box.addEventListener("click", () => {
     currentColor = box.getAttribute("value");
-    console.log(currentColor);
   })
 );
