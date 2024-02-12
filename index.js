@@ -2,6 +2,7 @@ const sketchContainer = document.querySelector(".sketchContainer");
 const colorContainer = document.querySelector(".colorContainer");
 const eraseBtn = document.querySelector(".eraseBtn");
 const editGridBtn = document.querySelector(".sizeInput");
+const currentSizeText = document.querySelector(".sizeText");
 const colors = [
   "red",
   "orange",
@@ -15,6 +16,7 @@ const colors = [
   "black",
 ];
 let currentColor;
+let size = 16;
 const background = `style="background-color:${currentColor};"`;
 
 // Creates flex boxes
@@ -40,12 +42,12 @@ function colorGrid() {
   });
 }
 colorGrid();
-  //Erase Screen
-  eraseBtn.addEventListener("click", () => {
-    for (const box of sketchContainer.children) {
-        box.style.backgroundColor = 'white'
-    }
-  });
+//Erase Screen
+eraseBtn.addEventListener("click", () => {
+  for (const box of sketchContainer.children) {
+    box.style.backgroundColor = "white";
+  }
+});
 
 // Sets the chosen color
 const colorBox = document.querySelectorAll(".colorBox");
@@ -56,7 +58,7 @@ colorBox.forEach((box) =>
 );
 
 editGridBtn.addEventListener("click", () => {
-  let size = window.prompt("Choose size");
+  size = window.prompt("Choose size");
   console.log(typeof size);
   if (!Number.isInteger(Number(size))) {
     alert("Please input a valid number!");
@@ -67,15 +69,22 @@ editGridBtn.addEventListener("click", () => {
       const grid = size * size;
       const pixelsize = 476.8 / size;
       const frag = document.createDocumentFragment();
-      for(let i = 0; i < grid; i++) {
-        const box = document.createElement('div')
-        box.className = 'sketchBox';
+      for (let i = 0; i < grid; i++) {
+        const box = document.createElement("div");
+        box.className = "sketchBox";
         box.style.width = `${pixelsize}px`;
         box.style.height = `${pixelsize}px`;
-        frag.appendChild(box)
+        frag.appendChild(box);
       }
       sketchContainer.innerHTML = ``;
       sketchContainer.appendChild(frag);
+      displaySize();
     }
   }
 });
+
+function displaySize() {
+  currentSizeText.innerHTML = `Current Size: ${size}x${size}`;
+}
+
+displaySize();

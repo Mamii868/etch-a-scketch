@@ -57,3 +57,7 @@ body {
 .btn:hover:active {
   background-color: #9aa7ff;
 }
+
+.sizeText {
+  margin: auto;
+}
