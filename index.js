@@ -24,14 +24,13 @@ function createGrid() {
   }
 }
 createGrid();
-const sketchBox = document.querySelectorAll(".sketchBox");
 
-// Captures where mouse hovers
-sketchBox.forEach((box) =>
-  box.addEventListener("mouseover", () => {
-    box.style.backgroundColor = currentColor;
-  })
-);
+//Finds hovered flex item and changes color
+const sketchBox = document.querySelectorAll(".sketchBox");
+sketchContainer.addEventListener('mouseover', function(e) {
+    e.target.style.backgroundColor = currentColor;
+})
+
 // Creates color selection
 function colorGrid() {
   colors.forEach((color) => {
