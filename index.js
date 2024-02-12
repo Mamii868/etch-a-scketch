@@ -58,7 +58,7 @@ colorBox.forEach((box) =>
 );
 
 editGridBtn.addEventListener("click", () => {
-  size = window.prompt("Choose size");
+  size = window.prompt("Enter Grid Size. Ex: 64 = 64 x 64");
   console.log(typeof size);
   if (!Number.isInteger(Number(size))) {
     alert("Please input a valid number!");
