@@ -28,7 +28,10 @@ createGrid();
 //Finds hovered flex item and changes color
 const sketchBox = document.querySelectorAll(".sketchBox");
 sketchContainer.addEventListener('mouseover', function(e) {
-    e.target.style.backgroundColor = currentColor;
+    if(e.target.classList.contains('sketchBox')) {
+        e.target.style.backgroundColor = currentColor;
+    }
+   
 })
 
 // Creates color selection
@@ -64,10 +67,41 @@ editGridBtn.addEventListener("click", () => {
       alert("Must be between 2x2 and 100x100");
     } else {
       sketchContainer.innerHTML = ``;
-      for (let i = 1; i <= (size * size); i++) {
-        sketchContainer.innerHTML += `<div class="sketchBox"></div>`;
-      }
-      
+      let grid = size * size
+      let pixelsize = 476.8 / size;
+
+      if (grid % 8 === 0) {
+        for (let g = 0; g < 8; g++) {
+            setTimeout(() => {
+            for (let i = 1; i <= (grid / 8); i++) {
+                sketchContainer.innerHTML += `<div class="sketchBox" style="flex-basis: ${pixelsize}px; height: ${pixelsize}px;"></div>`;
+              }}, 0)
+          }
+      } else if (grid % 6 === 0) {
+        for (let g = 0; g < 6; g++) {
+            setTimeout(() => {
+            for (let i = 1; i <= (grid / 6); i++) {
+                sketchContainer.innerHTML += `<div class="sketchBox" style="flex-basis: ${pixelsize}px; height: ${pixelsize}px;"></div>`;
+              }
+              }, 0)
+          }
+      } else if (grid % 4 === 0) {
+        for (let g = 0; g < 4; g++) {
+            setTimeout(() => {
+            for (let i = 1; i <= (grid / 4); i++) {
+                sketchContainer.innerHTML += `<div class="sketchBox" style="flex-basis: ${pixelsize}px; height: ${pixelsize}px;"></div>`;
+              }
+              }, 0)
+          }
+      } else {
+        for (let g = 0; g < 2; g++) {
+            setTimeout(() => {
+            for (let i = 1; i <= (grid / 2); i++) {
+                sketchContainer.innerHTML += `<div class="sketchBox" style="flex-basis: ${pixelsize}px; height: ${pixelsize}px;"></div>`;
+              }
+              }, 0)
+          }
+      }     
     }
   }
 });
